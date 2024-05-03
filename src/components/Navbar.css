@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    padding: 10px 20px;
+    margin-top: 0px; 
+  }
+  
+  .logo {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .search-icon,
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    order: -1; /* Moves the menu icon to the left */
+  }
+  
+  .search-icon i, .search-icon img {
+    display: inline-block;
+    margin-left: 5px;
+  }
+  
