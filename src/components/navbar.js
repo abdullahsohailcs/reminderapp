@@ -10,12 +10,12 @@ function Navbar() {
 
   return (
 <div style={{
-  background: 'linear-gradient(135deg, #FCE4EC, #E0FFFF)',padding:"0px",
+  background: 'rgba(0, 0, 0, 0)',padding:"0px",
 }}>
     <nav className="navbar fixed-top">
       <div className="container-fluid">
-      <a className="navbar-brand" Link="#"></a>
-        <h1 style={{ margin: "5px",letterSpacing: '12px', margin: '2px', fontWeight: 'normal' }}>T   O   D   O</h1>
+      <Link style={{ margin: "5px",letterSpacing: '12px', margin: '2px', fontWeight: 'normal' }} className="navbar-brand" to="/"> T O D O</Link>
+        
         <button className="navbar-toggler" type="button" onClick={toggleOffcanvas} aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -48,7 +48,6 @@ function Navbar() {
         </div>
       </div>
     </nav><br></br><br></br><br></br>
-    <hr style={{marginTop:"-2px"}}></hr>
     </div>
   );
 }

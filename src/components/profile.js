@@ -28,9 +28,15 @@ const UserProfile = () => {
   };
 
   return (
-    <div>
+    <div style={{
+        backgroundImage: 'url("/Images/cloud.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100%', // Set the width to 100%
+        /* You can add more CSS properties here */
+      }}>
       <Navbar />
-      <div className="max-w-md mx-auto mt-8 p-6 rounded-md shadow-lg">
+      <div className="max-w-md mx-auto mt-8 p-6 rounded-md shadow-lg" style={{background: 'linear-gradient(135deg, rgba(252, 228, 236, 0.6), rgba(224, 255, 255, 0.6))'}}>
         <h1 className="text-2xl font-bold mb-4">User Profile</h1>
         <div className="flex items-center justify-center mb-4">
           <img
@@ -112,6 +118,7 @@ const UserProfile = () => {
           </div>
         )}
       </div>
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
     </div>
   );
 };

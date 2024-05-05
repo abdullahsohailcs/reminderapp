@@ -112,7 +112,8 @@ const BlogEditorWithToggle = () => {
                   Date and Time:
                   </strong>
                 </label>
-                <input  style={{padding:"10px",backgroundColor:"#FBE5ED"}} aria-label="Date and time" type="datetime-local" />
+                <input  style={{padding:"10px",backgroundColor:"rgba(249, 237, 241, 0)"}} 
+                aria-label="Date and time" type="datetime-local" />
                 
               </div>
               <button type="submit" className="blog-editor__submit-button">
