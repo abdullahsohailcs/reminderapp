@@ -31,7 +31,7 @@ function Navbar() {
                 <Link to="/" style={{ textDecoration: "none" }} className="nav-link active" aria-current="page" >Home</Link>
               </li><hr></hr>
               <li className="nav-item">
-                <Link to='#' className="nav-link">Profile</Link>
+                <Link to='/profile' className="nav-link">Profile</Link>
               </li><hr></hr>
               <li className="nav-item">
                 <Link to="/" style={{ textDecoration: "none" }} className="nav-link active" aria-current="page" >Signup</Link>
