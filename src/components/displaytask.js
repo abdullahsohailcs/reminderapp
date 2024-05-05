@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
@@ -61,7 +62,7 @@ function BlogsPage() {
     <div>
       {<div>
             <center>
-            <button onClick={handleShowForm} type="button" class="btn btn-outline-secondary btn-block"
+            <button onClick={handleShowForm} type="button" className="btn btn-outline-secondary btn-block"
              style={{padding:"10px",backgroundColor:"#FBE5ED",background: "linear-gradient(135deg, #FCE4EC, #E0FFFF)"}}>
           Add New Task 
         </button></center>
