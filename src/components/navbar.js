@@ -14,7 +14,7 @@ function Navbar() {
 }}>
     <nav className="navbar fixed-top">
       <div className="container-fluid">
-      <Link style={{ margin: "5px",letterSpacing: '12px', margin: '2px', fontWeight: 'normal' }} className="navbar-brand" to="/"> T O D O</Link>
+      <Link style={{ letterSpacing: '12px', fontWeight: 'normal' }} className="navbar-brand" to="/"> T O D O </Link>
         
         <button className="navbar-toggler" type="button" onClick={toggleOffcanvas} aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
