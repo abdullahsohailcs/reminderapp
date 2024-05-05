@@ -74,7 +74,7 @@ const BlogEditorWithToggle = () => {
   return (
     <>
       <br />
-      <div className="blog-editor">
+      <div className="blog-editor" style={{background: 'linear-gradient(135deg, #FCE4EC, #E0FFFF)'}}>
         { (
           <>
             <h2 className="blog-editor__title"><strong>Add New Task</strong></h2>
@@ -90,6 +90,7 @@ const BlogEditorWithToggle = () => {
                   onChange={handleTitleChange}
                   className="blog-editor__text-input"
                   required
+                  style={{backgroundColor:"#F9EDF1"	}}
                 />
               </div>
               <div className="blog-editor__input">
@@ -102,6 +103,7 @@ const BlogEditorWithToggle = () => {
                   modules={modules}
                   formats={formats}
                   className="blog-editor__quill-editor"
+                  style={{backgroundColor:"#F9EDF1"	}}
                 />
               </div>
               <div className="blog-editor__input">

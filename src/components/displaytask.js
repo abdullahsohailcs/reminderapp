@@ -61,8 +61,9 @@ function BlogsPage() {
     <div>
       {<div>
             <center>
-            <button onClick={handleShowForm} type="button" class="btn btn-outline-secondary btn-block" style={{padding:"10px",backgroundColor:"#FBE5ED"}}>
-          Add New Task
+            <button onClick={handleShowForm} type="button" class="btn btn-outline-secondary btn-block"
+             style={{padding:"10px",backgroundColor:"#FBE5ED",background: "linear-gradient(135deg, #FCE4EC, #E0FFFF)"}}>
+          Add New Task 
         </button></center>
         {showForm && <BlogEditor setShowForm={setShowForm} />}
       </div>}
