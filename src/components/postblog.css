@@ -1,0 +1,68 @@
+/* BlogEditor.css */
+
+.blog-editor {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    background-color: #FBE5ED;
+  }
+  
+  .blog-editor__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .blog-editor__form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog-editor__input {
+    margin-bottom: 20px;
+  }
+  
+  .blog-editor__label {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .blog-editor__text-input,
+  .blog-editor__textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allow vertical resizing of textarea */
+  }
+  
+  .blog-editor__submit-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #9dc8f7;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .blog-editor__submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* postblog.css */
+.blog-editor__date-time-picker {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
