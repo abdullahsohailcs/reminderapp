@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import "react-quill/dist/quill.snow.css";
 import "./postblog.css";
