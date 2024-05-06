@@ -3,7 +3,6 @@ import "react-quill/dist/quill.snow.css";
 import "./postblog.css";
 import ReactQuill from "react-quill";
 import axios from "axios";
-import DateTimePicker from 'react-datetime-picker'
 import 'react-calendar/dist/Calendar.css';
 import 'react-clock/dist/Clock.css';
 import 'react-datetime-picker/dist/DateTimePicker.css';
