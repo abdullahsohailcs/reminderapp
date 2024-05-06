@@ -3,9 +3,6 @@ import "react-quill/dist/quill.snow.css";
 import "./postblog.css";
 import ReactQuill from "react-quill";
 import axios from "axios";
-import 'react-calendar/dist/Calendar.css';
-import 'react-clock/dist/Clock.css';
-import 'react-datetime-picker/dist/DateTimePicker.css';
 
 
 const BlogEditorWithToggle = () => {
@@ -112,7 +109,7 @@ const BlogEditorWithToggle = () => {
                   </strong>
                 </label>
                 <input  style={{padding:"10px",backgroundColor:"rgba(249, 237, 241, 0)"}} 
-                aria-label="Date and time" type="datetime-local" />
+                aria-label="Date and time" type="datetime-local" onChange={handleDateTimeChange}/>
                 
               </div>
               <button type="submit" className="blog-editor__submit-button">
