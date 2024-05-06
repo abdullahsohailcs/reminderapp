@@ -1,8 +1,29 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { UserAuth } from '../context/AuthContext';
+import Signin from './login';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
+  const { user,userlogOut } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    try {
+      await userlogOut();
+      navigate("/login");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    if(user===null){
+        
+    }
+}, [user]);
 
   const toggleOffcanvas = () => {
     setIsOffcanvasOpen(!isOffcanvasOpen);
@@ -21,26 +42,21 @@ function Navbar() {
         </button>
         <div className={`offcanvas offcanvas-end ${isOffcanvasOpen ? 'show' : ''}`} tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasNavbarLabel">T O D O</h5>
+            <h1 className="offcanvas-title" id="offcanvasNavbarLabel">T O D O</h1>
             <button type="button" className="btn-close" onClick={toggleOffcanvas} aria-label="Close"></button>
           </div>
           <div className="offcanvas-body">
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3" style={{ textDecoration: "none",padding:"6px",margin:"4px"}}>
               <hr></hr>
               <li className="nav-item">
-                <Link to="/" style={{ textDecoration: "none" }} className="nav-link active" aria-current="page" >Home</Link>
+                <Link to="/"  className="nav-link active" aria-current="page" >Home</Link>
               </li><hr></hr>
               <li className="nav-item">
                 <Link to='/profile' className="nav-link">Profile</Link>
               </li><hr></hr>
               <li className="nav-item">
-                <Link to="/" style={{ textDecoration: "none" }} className="nav-link active" aria-current="page" >Signup</Link>
-              </li><hr></hr>
-              <li className="nav-item">
-                <Link to="/" style={{ textDecoration: "none" }} className="nav-link active" aria-current="page" >Login</Link>
-              </li><hr></hr>
-              <li className="nav-item">
-                <Link to="/" style={{ textDecoration: "none" }} className="nav-link active" aria-current="page" >Logout</Link>
+                <Link onClick={handleSignOut} style={{ textDecoration: "none" }} className="nav-link active" aria-current="page" >Logout</Link>
+                
               </li><hr></hr>
 
             </ul>
@@ -48,6 +64,7 @@ function Navbar() {
         </div>
       </div>
     </nav><br></br><br></br><br></br>
+    
     </div>
   );
 }

@@ -11,16 +11,13 @@ function Home() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%', // Set the width to 100%
+        height: '100vh',
         /* You can add more CSS properties here */
       }}>
       <Navbar /> 
       <br>
       </br>
       <DisplayList />
-      <p>adsssssssssss</p>
-      <p>adsssssssssss</p>
-      <p>adsssssssssss</p>
-      <p>adsssssssssss</p>
     </div>
   );
 }
