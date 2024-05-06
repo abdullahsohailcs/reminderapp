@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { UserAuth } from '../context/AuthContext';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Navbar() {
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
@@ -16,11 +18,12 @@ function Navbar() {
       console.log(err);
     }
   };
-  
+  console.log(user);  
 
   useEffect(() => {
     if(user===null){
       navigate("/");
+      toast("You have been logged out!");
     }
 }, [user]);
 

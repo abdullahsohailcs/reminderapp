@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import BlogEditor from "./postblog";
+import CountdownTimer from "./countdown";
+
 
 const BlogContainer = styled.div`
   max-width: 50%;
@@ -60,6 +62,16 @@ function BlogsPage() {
     }
   };
 
+  // Assuming dateTimeString is the string representation of the date and time
+const dateTimeString = blogs.dateTime;
+
+// Parse the string into a Date object
+
+
+console.log(dateTimeString); // Output: "Tue May 07 2024 03:14:51 GMT+5"
+
+
+
   return (
     <div>
       {<div>
@@ -84,10 +96,12 @@ function BlogsPage() {
         </center>
         {blogs.map((blog) => (
           <BlogItem key={blog._id}>
-          <h3 style={{ fontSize: 25, textAlign: "center" }}>{blog.title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: blog.body }}></div>
-          {/* Rest of your code */}
-        </BlogItem>
+            <h3 style={{ fontSize: 25, textAlign: "center" }}>{blog.title}</h3>
+            <div dangerouslySetInnerHTML={{ __html: blog.body }}></div>
+            {/* Integrate the CountdownTimer component */}
+            <CountdownTimer dateTime={blog.dateTime} />
+            {/* Rest of your code */}
+          </BlogItem>
         ))}
       </BlogContainer>
     </div>

@@ -5,6 +5,8 @@ import Profile from './components/profile';
 import Signin from './components/login';
 import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/protect';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   
@@ -23,6 +25,7 @@ function App() {
         </Routes>
       </Router>
       </AuthContextProvider>
+      <ToastContainer />
     </div>
   );
 }
