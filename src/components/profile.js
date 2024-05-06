@@ -42,7 +42,7 @@ const UserProfile = () => {
           <img
             className="w-25 h-25 rounded-full object-cover"
             src="/Images/harvy.jpg"
-            alt="Profile Picture"
+            alt="User Profile "
           />
         </div>
         {editMode ? (

@@ -31,7 +31,7 @@ function BlogsPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/blogs");
+        const response = await axios.get("https://reminderapp-74a9c-default-rtdb.asia-southeast1.firebasedatabase.app/blog.json");
         setBlogs(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

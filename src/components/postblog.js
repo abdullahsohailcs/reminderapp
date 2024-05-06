@@ -3,14 +3,20 @@ import "react-quill/dist/quill.snow.css";
 import "./postblog.css";
 import ReactQuill from "react-quill";
 import axios from "axios";
+import { UserAuth } from '../context/AuthContext';
 
 
 const BlogEditorWithToggle = () => {
-
+  const { user,logOut } = UserAuth();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [dateTime, setDateTime] = useState(new Date());
-  const [value, onChange] = useState(new Date());
+  const [uid,setuid]=useState(user.uid);
+
+  console.log({title: title,
+    body: body,
+    dateTime: dateTime,
+    uid:uid})
 
   const modules = {
     toolbar: [
@@ -50,10 +56,11 @@ const BlogEditorWithToggle = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/api/blogs", {
+      .post("https://reminderapp-74a9c-default-rtdb.asia-southeast1.firebasedatabase.app/blog.json", {
         title: title,
         body: body,
-        dateTime: dateTime,
+        dateTime: dateTime.toString(),
+        uid:uid
       })
       .then(function (response) {
         console.log(response);

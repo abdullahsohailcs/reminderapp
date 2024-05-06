@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { UserAuth } from '../context/AuthContext';
-import Signin from './login';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,6 +16,7 @@ function Navbar() {
       console.log(err);
     }
   };
+  
 
   useEffect(() => {
     if(user===null){
@@ -34,7 +34,7 @@ function Navbar() {
 }}>
     <nav className="navbar fixed-top">
       <div className="container-fluid">
-      <Link style={{ margin: "5px",letterSpacing: '12px', margin: '2px', fontWeight: 'normal' }} className="navbar-brand" to="/homepage"> T O D O</Link>
+      <Link style={{ margin: "5px",letterSpacing: '12px', fontWeight: 'normal' }} className="navbar-brand" to="/homepage"> T O D O</Link>
         
         <button className="navbar-toggler" type="button" onClick={toggleOffcanvas} aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -63,6 +63,7 @@ function Navbar() {
         </div>
       </div>
     </nav><br></br><br></br><br></br>
+    
     
     </div>
   );
