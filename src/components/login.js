@@ -20,7 +20,7 @@ const Signin = () => {
 
     useEffect(() => {
         if(user!==null){
-            navigate("/");
+            navigate("/homepage");
         }
     }, [user]);
 
