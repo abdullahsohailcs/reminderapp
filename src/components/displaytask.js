@@ -4,13 +4,13 @@ import styled from "styled-components";
 import BlogEditor from "./postblog";
 
 const BlogContainer = styled.div`
-  max-width: 800px;
+  max-width: 50%;
   margin: 0 auto;
   padding: 20px;
 `;
 
 const BlogItem = styled.div`
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, rgba(252, 228, 236, 0.6), rgba(224, 255, 255, 0.6));
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -32,12 +32,15 @@ function BlogsPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://reminderapp-74a9c-default-rtdb.asia-southeast1.firebasedatabase.app/blog.json");
-        setBlogs(response.data);
+        // Convert object to array
+        const blogsArray = Object.values(response.data);
+        setBlogs(blogsArray);
+        console.log(blogsArray);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-
+  
     fetchData();
   }, []);
 
@@ -48,7 +51,7 @@ function BlogsPage() {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        "http://localhost:3001/api/blogs/" + id
+        "https://reminderapp-74a9c-default-rtdb.asia-southeast1.firebasedatabase.app/blog.json" + id
       );
 
       console.log("Delete successful:", response);
@@ -62,7 +65,7 @@ function BlogsPage() {
       {<div>
             <center>
             <button onClick={handleShowForm} type="button" class="btn btn-outline-secondary btn-block"
-             style={{padding:"10px",backgroundColor:"#FBE5ED",background: "linear-gradient(135deg, #FCE4EC, #E0FFFF)"}}>
+             style={{padding:"10px",backgroundColor:"#FBE5ED",background: "linear-gradient(135deg, #FCE4EC, #E0FFFF)",width:"30%"}}>
           Add New Task 
         </button></center>
         {showForm && <BlogEditor setShowForm={setShowForm} />}
@@ -70,7 +73,13 @@ function BlogsPage() {
       <BlogContainer>
       <center>
         <br></br>
-        <h1 style={{ fontSize: 20, textAlign: "center" }}><b>Blogs</b></h1>
+        <hr></hr>
+        <br></br>
+        
+        <h1 style={{ fontSize: 25, textAlign: "center", color:"#333333" }}><b>Your TODO List</b></h1>
+        <br></br>
+        <hr></hr>
+        <br></br>
         <br></br>
         </center>
         {blogs.map((blog) => (
