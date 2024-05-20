@@ -10,19 +10,16 @@ function Home() {
         backgroundImage: 'url("/Images/cloud1.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        width: '100%', // Set the width to 100%
-        /* You can add more CSS properties here */
+        backgroundRepeat: 'repeat-y', // Repeat vertically
+        width: '100%',
+        minHeight: '100vh', // Use minHeight instead of height to ensure the background covers the entire viewport
       }}>
       <Navbar /> 
-      <br>
-      </br>
+      <br />
       <DisplayList />
-      <p>adsssssssssss</p>
-      <p>adsssssssssss</p>
-      <p>adsssssssssss</p>
-      <p>adsssssssssss</p>
     </div>
   );
+  
 }
 
 export default Home;

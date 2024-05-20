@@ -3,17 +3,20 @@ import "react-quill/dist/quill.snow.css";
 import "./postblog.css";
 import ReactQuill from "react-quill";
 import axios from "axios";
-import DateTimePicker from 'react-datetime-picker'
+import { UserAuth } from '../context/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import DateTimePicker from 'react-datetime-picker';
+import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import 'react-clock/dist/Clock.css';
-import 'react-datetime-picker/dist/DateTimePicker.css';
-
 
 const BlogEditorWithToggle = () => {
-
+  const { user,logOut } = UserAuth();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [dateTime, setDateTime] = useState(new Date());
+  const [uid,setuid]=useState(user.uid);
   const [value, onChange] = useState(new Date());
 
   const modules = {
@@ -54,13 +57,15 @@ const BlogEditorWithToggle = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/api/blogs", {
+      .post("https://reminderapp-74a9c-default-rtdb.asia-southeast1.firebasedatabase.app/blog.json", {
         title: title,
         body: body,
-        dateTime: dateTime,
+        dateTime: value.toLocaleString(),
+        uid:uid
       })
       .then(function (response) {
         console.log(response);
+        toast("New Task Created!");
       })
       .catch(function (error) {
         console.log(error);
@@ -108,18 +113,18 @@ const BlogEditorWithToggle = () => {
               </div>
               <div className="blog-editor__input">
                 
-                <label htmlFor="dateTime" className="blog-editor__label"><strong>
+                <label htmlFor="dateTime" className="blog-editor__label" style={{padding:"4px"}}><strong>
                   Date and Time:
                   </strong>
                 </label>
-                <input  style={{padding:"10px",backgroundColor:"rgba(249, 237, 241, 0)"}} 
-                aria-label="Date and time" type="datetime-local" />
+                <DateTimePicker  onChange={onChange} value={value}/>
                 
               </div>
               <button type="submit" className="blog-editor__submit-button">
                 Publish
               </button>
             </form>
+            
           </>
         )}
       </div>
